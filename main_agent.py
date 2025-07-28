@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 from typing import Dict, List, Tuple, Optional, TypedDict
@@ -11,6 +12,9 @@ from datetime import datetime
 import ast
 import kagglehub
 from kagglehub import KaggleDatasetAdapter
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # State definition for LangGraph
 class RecruitingState(TypedDict):
@@ -42,7 +46,7 @@ class LangGraphRecruitingAgent:
     def __init__(self):
         self.llm = ChatGoogleGenerativeAI(
             model="gemini-2.0-flash-001",
-            google_api_key='AIzaSyDGbASlk-JtYMTT5S_RdLBPIpYPGlOlkWg',
+            api_key=os.environ.get("GOOGLE_API_KEY"),
             temperature=0.1
         )
 

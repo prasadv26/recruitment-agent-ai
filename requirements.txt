@@ -6,4 +6,10 @@ pydantic>=2.0.0
 python-dotenv>=1.0.0
 kagglehub[pandas-datasets]>=0.2.0
 
+streamlit
+langchain 
+google-generativeai
+dotenv
+
+
 # pip install pandas numpy langgraph langchain-google-genai pydantic python-dotenv kagglehub[pandas-datasets]
